@@ -13,7 +13,8 @@ router.get("/", async (req, res) => {
       status: "healthy",
       timestamp: new Date().toISOString(),
       database: dbStatus,
-      environment: process.env.NODE_ENV || "development"
+      environment: process.env.NODE_ENV || "development",
+      uptime: Math.floor(process.uptime())
     });
   } catch (error) {
     res.status(503).json({
