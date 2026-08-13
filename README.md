@@ -222,8 +222,7 @@ This project is evolving, and here are a few exciting things on the horizon:
 ![Login](/frontend/public/login.png)
 
 
-### Deployment target: development
-
+Deployment target: production
 
 ## 📜 License
 
