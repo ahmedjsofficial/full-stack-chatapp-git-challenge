@@ -116,3 +116,22 @@ export const checkAuth = (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
+export const getAuthStatus = async (req, res) => {
+  try {
+    res.status(200).json({
+      authenticated: true,
+      user: {
+        id: req.user._id,
+        fullName: req.user.fullName,
+        email: req.user.email,
+      },
+    });
+  } catch (error) {
+    console.error("Error checking auth status:", error);
+    res.status(500).json({
+      authenticated: false,
+      message: "Unable to retrieve authentication status",
+    });
+  }
+};
